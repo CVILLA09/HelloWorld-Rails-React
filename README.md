@@ -39,7 +39,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [ Hello World ] <a name="about-project"></a>
+# 📖 Hello World 👋 <a name="about-project"></a>
 
 This web app combines React, Rails, and Webpack to provide users with a random greeting upon each visit. React handles the frontend, Rails manages the backend with a RESTful API, and Webpack optimizes asset bundling for a seamless and personalized user experience..
 
