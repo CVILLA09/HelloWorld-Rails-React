@@ -75,11 +75,10 @@ This web app combines React, Rails, and Webpack to provide users with a random g
 for cloning follow this steps
 
 - Create a local directory where you can clone the project
-- Clone the project to your directory by running
-  https://github.com/StevenWafeek/hello-rails-react
+- Clone the project to your directory 
 - Run the code with ruby
 
-Example commands:
+Clone command:
 
 ```sh
   git clone git@github.com:CVILLA09/HelloWorld-Rails-React.git
