@@ -82,7 +82,7 @@ for cloning follow this steps
 Example commands:
 
 ```sh
-  git clone https://github.com/CVILLA09/HelloWorld-Rails-React
+  git clone git@github.com:CVILLA09/HelloWorld-Rails-React.git
 ```
 
 ### Prerequisites
