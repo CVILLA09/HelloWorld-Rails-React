@@ -1,0 +1,22 @@
+# PostgreSQL Configuration
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: macpro  # The PostgreSQL username
+  password: password  # The PostgreSQL password
+  host: localhost
+
+development:
+  <<: *default
+  database: hello_rails_react_development  # The development database name
+
+test:
+  <<: *default
+  database: hello_rails_react_test  # The test database name
+
+production:
+  <<: *default
+  database: hello_rails_react_production  # The production database name
+  username: macpro  # The production database username (if different)
+  password: <%= ENV['HELLO_RAILS_REACT_DATABASE_PASSWORD'] %>  # The production database password (use environment variable for security)
