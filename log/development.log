@@ -123,3 +123,155 @@ puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
 puma (6.4.0) lib/puma/server.rb:443:in `process_client'
 puma (6.4.0) lib/puma/server.rb:241:in `block in run'
 puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+  [1m[35m (86.9ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_development" ENCODING = 'unicode'[0m
+  [1m[35m (94.5ms)[0m  [1m[35mCREATE DATABASE "hello_rails_react_test" ENCODING = 'unicode'[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (12.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6835469566630085430)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-12-12 22:30:35.628217', '2023-12-12 22:30:35.628222') RETURNING "key"[0m
+Migrating to CreateGreetings (20231212000824)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "greetings" ("id" bigserial primary key, "message" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231212000824') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6835469566630085430)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-12-12 16:31:56 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+Zeitwerk::NameError (expected file /Users/macpro/Desktop/HelloWorld-Rails-React/app/helpers/roots_helper.rb to define constant RootsHelper, but didn't):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/root_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2023-12-12 16:33:27 -0600
+Processing by RootController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/index.html.erb within layouts/application
+  Rendered root/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 687.2ms | Allocations: 76805)
+Completed 200 OK in 707ms (Views: 693.4ms | ActiveRecord: 0.0ms | Allocations: 78601)
+
+
+Started GET "/" for ::1 at 2023-12-12 17:09:43 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RootController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/index.html.erb within layouts/application
+  Rendered root/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 186)
+  Rendered layout layouts/application.html.erb (Duration: 663.8ms | Allocations: 30074)
+Completed 200 OK in 699ms (Views: 676.3ms | ActiveRecord: 0.0ms | Allocations: 34095)
+
+
+Started GET "/random_greeting.json" for ::1 at 2023-12-12 17:09:48 -0600
+Processing by GreetingsController#random_greeting as JSON
+  [1m[36mGreeting Load (1.4ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings"[0m
+  ↳ app/controllers/greetings_controller.rb:3:in `random_greeting'
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 8.7ms | Allocations: 9667)
+
+
+  
+NoMethodError (undefined method `message' for nil:NilClass):
+  
+app/controllers/greetings_controller.rb:4:in `random_greeting'
+Started GET "/random_greeting.json" for ::1 at 2023-12-12 17:09:50 -0600
+Processing by GreetingsController#random_greeting as JSON
+  [1m[36mGreeting Load (0.6ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings"[0m
+  ↳ app/controllers/greetings_controller.rb:3:in `random_greeting'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.6ms | Allocations: 849)
+
+
+  
+NoMethodError (undefined method `message' for nil:NilClass):
+  
+app/controllers/greetings_controller.rb:4:in `random_greeting'
+Started GET "/random_greeting.json" for ::1 at 2023-12-12 17:09:52 -0600
+Processing by GreetingsController#random_greeting as JSON
+  [1m[36mGreeting Load (0.7ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings"[0m
+  ↳ app/controllers/greetings_controller.rb:3:in `random_greeting'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.6ms | Allocations: 847)
+
+
+  
+NoMethodError (undefined method `message' for nil:NilClass):
+  
+app/controllers/greetings_controller.rb:4:in `random_greeting'
+Started GET "/random_greeting.json" for ::1 at 2023-12-12 17:10:48 -0600
+Processing by GreetingsController#random_greeting as JSON
+  [1m[36mGreeting Load (0.4ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings"[0m
+  ↳ app/controllers/greetings_controller.rb:3:in `random_greeting'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms | Allocations: 837)
+
+
+  
+NoMethodError (undefined method `message' for nil:NilClass):
+  
+app/controllers/greetings_controller.rb:4:in `random_greeting'
+  [1m[36mGreeting Load (0.8ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (2.9ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "GM!"], ["created_at", "2023-12-12 23:18:56.183582"], ["updated_at", "2023-12-12 23:18:56.183582"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (1.3ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "WAGMI"], ["created_at", "2023-12-12 23:18:56.190466"], ["updated_at", "2023-12-12 23:18:56.190466"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (1.2ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello, how are you?"], ["created_at", "2023-12-12 23:18:56.193940"], ["updated_at", "2023-12-12 23:18:56.193940"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (2.0ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hi there!"], ["created_at", "2023-12-12 23:18:56.197762"], ["updated_at", "2023-12-12 23:18:56.197762"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGreeting Create (1.3ms)[0m  [1m[32mINSERT INTO "greetings" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hey, nice to see you!"], ["created_at", "2023-12-12 23:18:56.202192"], ["updated_at", "2023-12-12 23:18:56.202192"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGreeting Load (1.2ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/greeting" for ::1 at 2023-12-12 17:20:25 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/greeting"):
+  
+Started GET "/" for ::1 at 2023-12-12 17:20:29 -0600
+Processing by RootController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/index.html.erb within layouts/application
+  Rendered root/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 85.5ms | Allocations: 21055)
+Completed 200 OK in 93ms (Views: 88.6ms | ActiveRecord: 0.0ms | Allocations: 22816)
+
+
+Started GET "/random_greeting.json" for ::1 at 2023-12-12 17:20:31 -0600
+Processing by GreetingsController#random_greeting as JSON
+  [1m[36mGreeting Load (0.9ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings"[0m
+  ↳ app/controllers/greetings_controller.rb:3:in `random_greeting'
+Completed 200 OK in 91ms (Views: 0.2ms | ActiveRecord: 18.4ms | Allocations: 16866)
+
+
+Started GET "/random_greeting.json" for ::1 at 2023-12-12 17:20:35 -0600
+Processing by GreetingsController#random_greeting as JSON
+  [1m[36mGreeting Load (0.5ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings"[0m
+  ↳ app/controllers/greetings_controller.rb:3:in `random_greeting'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 545)
+
+
+Started GET "/random_greeting.json" for ::1 at 2023-12-12 17:20:37 -0600
+Processing by GreetingsController#random_greeting as JSON
+  [1m[36mGreeting Load (0.5ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings"[0m
+  ↳ app/controllers/greetings_controller.rb:3:in `random_greeting'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 543)
+
+
+Started GET "/random_greeting.json" for ::1 at 2023-12-12 17:20:40 -0600
+Processing by GreetingsController#random_greeting as JSON
+  [1m[36mGreeting Load (0.7ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings"[0m
+  ↳ app/controllers/greetings_controller.rb:3:in `random_greeting'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 535)
+
+
+Started GET "/random_greeting.json" for ::1 at 2023-12-12 17:20:42 -0600
+Processing by GreetingsController#random_greeting as JSON
+  [1m[36mGreeting Load (0.5ms)[0m  [1m[34mSELECT "greetings".* FROM "greetings"[0m
+  ↳ app/controllers/greetings_controller.rb:3:in `random_greeting'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 541)
+
+
