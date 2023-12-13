@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 <div align="center">
- <h1><b> Welcome To My HelloWorld - Ruby and React Project! </b></h1>
+ <h1><b> Welcome To My "Hello world" project with two apps! </b></h1>
 </div>  
 
 <br/>
@@ -118,7 +118,7 @@ cd 'project name'
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **steven wafeek**
+👤 **Cristian Villa**
 
 - GitHub: [CVILLA09](https://github.com/CVILLA09)
 - LinkedIn: [Cristian Villa](https://www.linkedin.com/in/cristianvillavirgen/)
